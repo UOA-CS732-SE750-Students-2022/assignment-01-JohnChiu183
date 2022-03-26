@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import {Form, Input, Select, Button} from 'antd';
+import React, { useContext } from 'react';
+import {Form, Input, Select, Button, Modal} from 'antd';
 import '../App.css';
+import '../AppContextProvider';
+import { AppContext } from '../AppContextProvider';
 
 export default function AddMemberPage(){
 
-
     const { Option } = Select;
     const [form] = Form.useForm();
-
+    const {memberList, addNewMemberToList} = useContext(AppContext);
 
     const formItemLayout = {
       labelCol: {xs: {span: 24},sm: {span: 6}},
@@ -18,11 +19,27 @@ export default function AddMemberPage(){
       wrapperCol: {
         xs: {offset: 11},sm: {offset: 11}}
     };
-    
+
+    // Post-process when the "Register New Member" button has been clicked
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
+        addNewMemberToList(values);
+        Modal.success(
+            {
+                title: 'Create Member Success',
+                content: (
+                    <div><b>{values.Salutation} {values.LastName}</b> has been added to the membership 
+                    database, and the email: <b>{values.Email}</b> will be the member's ID.</div>
+                ),
+                onOk(){
+                    console.log('test');
+                }
+            }
+        );
+      
     };
     
+    // Setup options of the phone prefix, write the function here can easily update the content by other data sources. 
     const prefixSelector = (
         <Form.Item name="Prefix" noStyle>
           <Select style={{width: 70,}}>
@@ -32,6 +49,7 @@ export default function AddMemberPage(){
         </Form.Item>
     );
 
+    // Once the Hastag been added, can do something interaction with the database or mapping table
     function handleChange(value) {
         console.log(`selected ${value}`);
     }
@@ -43,10 +61,10 @@ export default function AddMemberPage(){
             <Form.Item label="Full Name" style={{ marginBottom: 0 }}>
                 <Form.Item name="Salutation" style={{ display: 'inline-block', width: '16%', textAlign: 'center'}}>
                     <Select>
-                        <Option value="mr">Mr.</Option>
-                        <Option value="miss">Miss</Option>
-                        <Option value="mrs">Mrs.</Option>
-                        <Option value="ms">Ms.</Option>
+                        <Option value="Mr">Mr.</Option>
+                        <Option value="Miss">Miss</Option>
+                        <Option value="Mrs">Mrs.</Option>
+                        <Option value="Ms">Ms.</Option>
                     </Select>
                 </Form.Item>
                 <Form.Item name="FirstName"

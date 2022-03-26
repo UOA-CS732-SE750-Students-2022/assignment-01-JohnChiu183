@@ -1,0 +1,27 @@
+[
+    {
+        "CompanyName": "TSMC",
+        "Email": "bilibalabow@gmail.com",
+        "FirstName": "Chiu",
+        "HashTag": ["Paid-Member", "Company-Contact-Window"],
+        "LastName": "Hsien-Chiang",
+        "MiddleName": "John",
+        "Phone": "1-234-5678",
+        "Position": "Product Manager",
+        "Prefix": "64",
+        "Salutation": "Mr."
+    },
+    {
+        "CompanyName": "Apple Inc.",
+        "Email": "chenyoyo37@gmail.com",
+        "FirstName": "Chen",
+        "HashTag": ["Paid-Member", "Intern"],
+        "LastName": "You-Ru",
+        "MiddleName": "Yoyo",
+        "Phone": "8-765-4321",
+        "Position": "Summer Intern",
+        "Prefix": "886",
+        "Salutation": "Ms."
+    }
+
+]
