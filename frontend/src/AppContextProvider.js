@@ -20,7 +20,6 @@ export function AppContextProvider({children}){
 
             if (memberList[i]['Email'] === email){
                 const tempArray = memberList.slice()
-                console.log('matched');
                 tempArray.splice(i, 1);
                 setMemberList(tempArray);
                 return true;

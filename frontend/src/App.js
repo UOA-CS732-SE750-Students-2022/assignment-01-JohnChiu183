@@ -42,10 +42,7 @@ const currentMenu = selectedKeyMap[location.pathname];
 
 
   return (
-    // <div>
-    //     <AddMemberPage />
-    //     <MemberViewPage />
-    // </div>
+
     <Layout className="layout">
       <Header>
         <div className="logo" />

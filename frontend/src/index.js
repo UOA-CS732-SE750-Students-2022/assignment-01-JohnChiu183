@@ -6,8 +6,6 @@ import { AppContextProvider } from './AppContextProvider';
 import { BrowserRouter } from 'react-router-dom';
 
 
-
-
 ReactDOM.render(
   <AppContextProvider>
     <React.StrictMode>
