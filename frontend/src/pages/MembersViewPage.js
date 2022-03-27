@@ -3,7 +3,7 @@ import '../App.css';
 import '../AppContextProvider';
 import { AppContext } from '../AppContextProvider';
 import { Card, List, Tag, Divider } from 'antd';
-import { SettingOutlined } from '@ant-design/icons';
+import { DeleteOutlined } from '@ant-design/icons';
 
 export default function MemberViewPage(){
 
@@ -16,7 +16,7 @@ export default function MemberViewPage(){
                 dataSource={memberList}
                 renderItem={item =>(
                     <List.Item>
-                        <Card style={{textAlign: 'center'}} hoverable actions={[<SettingOutlined key="setting" />]}>
+                        <Card style={{textAlign: 'center'}} hoverable actions={[<DeleteOutlined />]}>
                             <Meta
                                 title={item.LastName + ' ' + item.FirstName}  
                                 description={
