@@ -15,9 +15,23 @@ export function AppContextProvider({children}){
         setMemberList([...memberList, values]);
         return memberList;
     }
+    function removeMemberFromTheList(email){
+        for (let i=0; i< memberList.length; i++){
+
+            if (memberList[i]['Email'] === email){
+                const tempArray = memberList.slice()
+                console.log('matched');
+                tempArray.splice(i, 1);
+                setMemberList(tempArray);
+                return true;
+            }
+        }
+        return false;
+    }
     
-    const context = { memberList, addNewMemberToList };
+    const context = { memberList, addNewMemberToList, removeMemberFromTheList };
     
+
 
     return (
         <AppContext.Provider value={context}>
