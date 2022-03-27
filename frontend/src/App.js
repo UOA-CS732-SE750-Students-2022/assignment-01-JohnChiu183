@@ -16,7 +16,11 @@ function App() {
   const breadcrumbNameMap = {
     '/': 'Home (Member Management)',
     '/addMember': 'Create Members',
+  };
 
+  const selectedKeyMap = {
+    '/': 'menu1',
+    '/addMember': 'menu2'
   };
 
   const location = useLocation();
@@ -33,6 +37,7 @@ function App() {
 
 
 
+const currentMenu = selectedKeyMap[location.pathname];
 
 
 
@@ -44,11 +49,11 @@ function App() {
     <Layout className="layout">
       <Header>
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['menu_1']}>
-          <Menu.Item key='menu_1'>
+        <Menu theme="dark" mode="horizontal" selectedKeys={currentMenu}>
+          <Menu.Item key='menu1'>
             <NavLink to="/">Member Management</NavLink>
           </Menu.Item>
-          <Menu.Item key='menu_2'>
+          <Menu.Item key='menu2'>
             <NavLink to="addMember">Create Members</NavLink>
           </Menu.Item>
         </Menu>
