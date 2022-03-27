@@ -12,6 +12,7 @@ export default function AddMemberPage(){
     const {memberList, addNewMemberToList} = useContext(AppContext);
     let navigate = useNavigate(); 
 
+    // Ant design support different layout style in a single form
     const formItemLayout = {
       labelCol: {xs: {span: 24},sm: {span: 6}},
       wrapperCol: {xs: {span: 24},sm: {span: 12}}
@@ -23,6 +24,9 @@ export default function AddMemberPage(){
     };
 
     // Post-process when the "Register New Member" button has been clicked
+    // In finish event handling, we just saved submit JSON by AppContextProvider
+    // Once finished, the page will redirect to the home page (i.e., Member Management page )
+    
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
         addNewMemberToList(values);
@@ -56,6 +60,8 @@ export default function AddMemberPage(){
     }
 
     return (
+
+        // In the form design, we can give initial vaules for some fields and assign finish event
         <Form {...formItemLayout} form={form} name="register" onFinish={onFinish}
           initialValues={{Prefix: '64', Salutation: 'Mr.'}} scrollToFirstError>
 
@@ -93,6 +99,11 @@ export default function AddMemberPage(){
                 </Form.Item>
             </Form.Item>
 
+        {/* In addition, we can customized rules such as required and its error message. 
+            It's noticeable that some pre-defined validate type has already made for us such as email format!!!
+            The type detail can be found in https://github.com/yiminghe/async-validator#type
+        */}
+
         <Form.Item name="Email" label="Email" rules={[{required: true, type: 'email'}]}>
             <Input />
         </Form.Item>
@@ -124,7 +135,7 @@ export default function AddMemberPage(){
             rules={[
               {
                 required: true,
-                message: 'Please input your phone number!'
+                message: 'Please input your phone number!',
               }
             ]}>
             <Input addonBefore={prefixSelector} style={{width: '100%'}}/>
