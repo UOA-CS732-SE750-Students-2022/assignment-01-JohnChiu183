@@ -2,21 +2,41 @@ import React, { useContext } from 'react';
 import '../App.css';
 import '../AppContextProvider';
 import { AppContext } from '../AppContextProvider';
-import { Card, List, Tag, Divider } from 'antd';
-import { DeleteOutlined } from '@ant-design/icons';
+import { Card, List, Tag, Divider,Modal } from 'antd';
+import { DeleteOutlined, InfoCircleOutlined } from '@ant-design/icons';
 
 export default function MemberViewPage(){
 
     const { Meta } = Card;
     const { memberList } = useContext(AppContext);
 
+    function handleInfoOperate(values) {
+        Modal.info({
+          title: 'Detailed Member Information',
+          content: (
+            <div style={{paddingTop: 10}}>
+              <p>
+                    Full Name: <b>{values.Salutation} {values.FirstName} ({values.MiddleName}) {values.LastName}</b> <br/>
+                    Company: <b>{values.CompanyName}</b><br/>
+                    Job Title: <b>{values.Position}</b><br/>
+                    Phone: <b>+{values.Prefix} {values.Phone}</b><br/>
+                    Email: <b>{values.Email}</b><br/>
+                    <Divider orientation="center" style={{fontSize: 'smaller'}}>Member HashTags</Divider>
+                    {values.HashTag.map((tag) => <Tag color="blue">{tag}</Tag>)}
+
+              </p>
+            </div>
+          ),
+          onOk() {},
+        });
+      }
     // Key: renderItem based on dataSource can reduce coding effort when looping data  
     return(
         <List grid={{gutter: 16, xs: 1, sm: 2, md: 3, lg: 3, xl: 4, xxl: 6}}
                 dataSource={memberList}
                 renderItem={item =>(
                     <List.Item>
-                        <Card style={{textAlign: 'center'}} hoverable actions={[<DeleteOutlined />]}>
+                        <Card style={{textAlign: 'center'}} hoverable actions={[<InfoCircleOutlined key='info' onClick={() => handleInfoOperate(item)}/>, <DeleteOutlined key="delete" />]}>
                             <Meta
                                 title={item.LastName + ' ' + item.FirstName}  
                                 description={
