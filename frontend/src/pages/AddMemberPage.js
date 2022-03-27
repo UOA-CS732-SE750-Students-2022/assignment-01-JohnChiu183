@@ -3,12 +3,14 @@ import {Form, Input, Select, Button, Modal} from 'antd';
 import '../App.css';
 import '../AppContextProvider';
 import { AppContext } from '../AppContextProvider';
+import { NavLink, useNavigate, Link} from 'react-router-dom';
 
 export default function AddMemberPage(){
 
     const { Option } = Select;
     const [form] = Form.useForm();
     const {memberList, addNewMemberToList} = useContext(AppContext);
+    let navigate = useNavigate(); 
 
     const formItemLayout = {
       labelCol: {xs: {span: 24},sm: {span: 6}},
@@ -32,11 +34,10 @@ export default function AddMemberPage(){
                     database, and the email: <b>{values.Email}</b> will be the member's ID.</div>
                 ),
                 onOk(){
-                    console.log('test');
+                    navigate("../");
                 }
             }
         );
-      
     };
     
     // Setup options of the phone prefix, write the function here can easily update the content by other data sources. 
