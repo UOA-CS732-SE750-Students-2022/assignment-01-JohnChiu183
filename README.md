@@ -3,7 +3,7 @@ Hi mate,
 Thanks for reading the README. Below are the structure of the contents
 
 1. Ant design and demo case introduction
-2. Installation guide
+2. Installation guide and component usage
 3. Function introduction  
     3.1 AddMemberPage.js - Create New Member  
     3.2 MembersViewPage.js - Membership overview and management
@@ -19,5 +19,36 @@ The demonstration will focus on the part of Customer Relationship Management or 
 ![prototyping](https://user-images.githubusercontent.com/87575042/160287009-573e47f2-7899-4cfc-b8ea-843d45a719dd.png)
 
 
+## Installation guide and component usage  
 
-## Installation guide  
+0. In general, if you intentd to apply Ant design (assume that your environment is React ready). The only thing you have to do is install the Ant design package using yarn command: `yarn add antd`
+1. Import related components that you used in the page (\*.js), take Button as an example: `import {Button} from 'antd';` 
+2. Modify corresponding setting of the CSS file, add `@import '~antd/dist/antd.css';` on the top of the file.
+3. Once step 0 to 2 has been done, we can now show up our Ant design styled button as following    
+
+```
+import React from 'react';
+import { Button } from 'antd';
+import './App.css';
+
+const App = () => (
+  <div className="App">
+    <Button type="primary">Button</Button>
+  </div>
+);
+
+export default App;
+```
+
+4. For the detailed started guide, please refer to the [Ant Design](https://ant.design/docs/react/use-with-create-react-app#Install-and-Initialization) page.
+
+### Steps to run the CRM application
+
+1. Clone the repository into your local environment, the Git repo url is: https://github.com/UOA-CS732-SE750-Students-2022/assignment-01-JohnChiu183.git
+2. Open the terminal and change the directory to `.\assignment-01-JohnChiu183\frontend`
+3. Using `yarn` command to update the dependencies of the project.
+4. Run the application by `npm run start` and the CRM application should be ready in `http://localhost:3000` and wait for testing.  
+
+## Function introduction
+
+This simple CRM application has a header/content/footer display setting. The navigation menu includes 2 functions to complete a basic membership management scenario. The default page will be the 'Member Management" using `React.Routes`.
