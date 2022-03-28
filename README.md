@@ -41,3 +41,14 @@ export default App;
 ```
 
 4. For the detailed started guide, please refer to the [Ant Design](https://ant.design/docs/react/use-with-create-react-app#Install-and-Initialization) page.
+
+### Steps to run the CRM application
+
+1. Clone the repository into your local environment, the Git repo url is: https://github.com/UOA-CS732-SE750-Students-2022/assignment-01-JohnChiu183.git
+2. Open the terminal and change the directory to `.\assignment-01-JohnChiu183\frontend`
+3. Using `yarn` command to update the dependencies of the project.
+4. Run the application by `npm run start` and the CRM application should be ready in `http://localhost:3000` and wait for testing.  
+
+## Function introduction
+
+This simple CRM application has a header/content/footer display setting. The navigation menu includes 2 functions to complete a basic membership management scenario. The default page will be the 'Member Management" using `React.Routes`.
