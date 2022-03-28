@@ -64,6 +64,5 @@ export default function MemberViewPage(){
                         </Card>
                     </List.Item>
                 )}/>
-
     );
 }
