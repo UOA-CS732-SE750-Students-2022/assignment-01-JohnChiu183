@@ -4,15 +4,15 @@ import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/
 import './App.css';
 import AddMemberPage from './pages/AddMemberPage';
 import MemberViewPage from './pages/MembersViewPage';
-import { Route, Routes, NavLink, Link, useLocation } from 'react-router-dom';
+import { Route, Routes, NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
+import NoSuchPage from './pages/NoSuchPage';
 
 
 
 
 function App() {
-
+  let navigate = useNavigate(); 
   const { Header, Content, Footer } = Layout;
-
   const breadcrumbNameMap = {
     '/': 'Home (Member Management)',
     '/addMember': 'Create Members',
@@ -64,6 +64,7 @@ const currentMenu = selectedKeyMap[location.pathname];
             <Route path="/">
               <Route index element={<MemberViewPage />} />
               <Route path="addMember" element={<AddMemberPage />}/>
+              <Route path="*" element={<NoSuchPage />}/>
             </Route>
           </Routes>
         </div>
