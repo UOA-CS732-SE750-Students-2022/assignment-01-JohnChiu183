@@ -2,9 +2,9 @@
     {
         "CompanyName": "TSMC",
         "Email": "bilibalabow@gmail.com",
-        "FirstName": "Chiu",
-        "HashTag": ["Paid-Member", "Company-Contact-Window"],
-        "LastName": "Hsien-Chiang",
+        "FirstName": "Hsien-Chiang",
+        "HashTag": ["Paid-Member", "Contact-Window"],
+        "LastName": "Chiu",
         "MiddleName": "John",
         "Phone": "1-234-5678",
         "Position": "Product Manager",
@@ -14,14 +14,74 @@
     {
         "CompanyName": "Apple Inc.",
         "Email": "chenyoyo37@gmail.com",
-        "FirstName": "Chen",
+        "FirstName": "You-Ru",
         "HashTag": ["Paid-Member", "Intern"],
-        "LastName": "You-Ru",
+        "LastName": "Chen",
         "MiddleName": "Yoyo",
         "Phone": "8-765-4321",
         "Position": "Summer Intern",
         "Prefix": "886",
         "Salutation": "Ms."
+    },
+    {
+        "CompanyName": "Google Inc.",
+        "Email": "GaylordBalcom@gmail.com",
+        "FirstName": "Balcom",
+        "HashTag": ["Paid-Member"],
+        "LastName": "Gaylord",
+        "MiddleName": "",
+        "Phone": "8-765-4321",
+        "Position": "Product Manager",
+        "Prefix": "64",
+        "Salutation": "Mr."
+    },
+    {
+        "CompanyName": "AWS Webservice",
+        "Email": "HoseaJack@gmail.com",
+        "FirstName": "Jack",
+        "HashTag": ["Paid-Member"],
+        "LastName": "Hosea",
+        "MiddleName": "",
+        "Phone": "8-755-4321",
+        "Position": "Cloud Engineer",
+        "Prefix": "64",
+        "Salutation": "Mr."
+    },
+    {
+        "CompanyName": "Countdown Supermarket",
+        "Email": "LoftonMinta@gmail.com",
+        "FirstName": "Lofton",
+        "HashTag": ["Paid-Member"],
+        "LastName": "Minta",
+        "MiddleName": "",
+        "Phone": "8-765-4001",
+        "Position": "Clerk",
+        "Prefix": "64",
+        "Salutation": "Miss"
+    },
+    {
+        "CompanyName": "LJES",
+        "Email": "philliachiu0915@gmail.com",
+        "FirstName": "Yi-Chiang",
+        "HashTag": ["Student"],
+        "LastName": "Chiu",
+        "MiddleName": "Phillia",
+        "Phone": "3-667-2858",
+        "Position": "Student",
+        "Prefix": "886",
+        "Salutation": "Miss"
+    },
+    {
+        "CompanyName": "Kid Castle",
+        "Email": "ianchiu0711@gmail.com",
+        "FirstName": "Yi-Wei",
+        "HashTag": ["Student"],
+        "LastName": "Chiu",
+        "MiddleName": "Ian",
+        "Phone": "3-667-2800",
+        "Position": "Student",
+        "Prefix": "886",
+        "Salutation": "Mr."
     }
 
 ]

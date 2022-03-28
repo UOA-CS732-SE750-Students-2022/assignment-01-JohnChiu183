@@ -11,6 +11,7 @@ export default function AddMemberPage(){
     const [form] = Form.useForm();
     const {memberList, addNewMemberToList} = useContext(AppContext);
     let navigate = useNavigate(); 
+    
 
     // Ant design support different layout style in a single form
     const formItemLayout = {
@@ -104,7 +105,11 @@ export default function AddMemberPage(){
             The type detail can be found in https://github.com/yiminghe/async-validator#type
         */}
 
-        <Form.Item name="Email" label="Email" rules={[{required: true, type: 'email'}]}>
+        <Form.Item  name="Email" label="Email"
+                    rules={[{
+                        required: true, 
+                        message: 'Real mail, please',
+                        type: 'email'}]}>
             <Input />
         </Form.Item>
     
