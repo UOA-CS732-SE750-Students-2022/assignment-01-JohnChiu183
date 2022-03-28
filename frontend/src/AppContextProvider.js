@@ -12,6 +12,9 @@ export function AppContextProvider({children}){
     const [memberList, setMemberList] = membershipData(defaultMemberList);//useState(defaultMemberList);
     
     function addNewMemberToList(values){
+        if(values.HashTag==undefined){
+            values.HashTag=['None'];
+        }
         setMemberList([...memberList, values]);
         return memberList;
     }
